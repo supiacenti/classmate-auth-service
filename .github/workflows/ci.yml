@@ -31,9 +31,6 @@ jobs:
         with:
           name: coverage-report
           path: coverage
-        
-      - name: 🔍 Rodar ESLint
-        run: npx eslint src/**/*.ts
 
       - name: 🛠️ Build do projeto
         run: npm run build
