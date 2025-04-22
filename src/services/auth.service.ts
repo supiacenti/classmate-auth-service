@@ -30,4 +30,9 @@ export const loginUser = async (email: string, password: string) => {
   return { token, role: user.role }
 }
 
-export const __internal = { users }
+export const __internal = {
+  users,
+  clearUsers: () => {
+    users.length = 0;
+  }
+}
