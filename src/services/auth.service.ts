@@ -29,3 +29,5 @@ export const loginUser = async (email: string, password: string) => {
   const token = jwt.sign({ email, role: user.role }, process.env.JWT_SECRET as string, { expiresIn: '1h' })
   return { token, role: user.role }
 }
+
+export const __internal = { users }
