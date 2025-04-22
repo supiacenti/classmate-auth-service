@@ -1,21 +1,24 @@
 # 🔐 Auth Service — ClassMate
 
-> Microsserviço responsável por autenticação de usuários (login, cadastro e emissão de JWT).
+> Microsserviço responsável por autenticação de usuários (cadastro, login e emissão de tokens JWT).
+
 
 ---
 
 ## Testes
 
 ![CI](https://github.com/supiacenti/classmate-auth-service/actions/workflows/ci.yml/badge.svg)
+Cobertura: ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
+---
 
-## 🚀 Como rodar
+## 🚀 Como rodar localmente
 
-```bash
-npm install
-cp .env.example .env
-npm run dev
-```
+1. Instale as dependências: `npm install`  
+2. Copie o arquivo de exemplo: `cp .env.example .env`  
+3. Inicie em modo desenvolvimento: `npm run dev`
+
+---
 
 ## ⚙️ Variáveis de Ambiente
 
@@ -27,20 +30,27 @@ JWT_SECRET=algumasecretkeyfortoken
 ## 🧪 Rotas da API
 
 ### POST /auth/signup
-Cria um novo usuário
+Cadastro de novo usuário
+Body:
 
-Retorna um token JWT
+``` json
+{
+  "email": "exemplo@email.com",
+  "password": "123456",
+  "name": "Fulano",
+  "role": "ADMIN"
+}
+```
 
 ### POST /auth/login
-Autentica um usuário existente
+Login com retorno de token JWT
+Body:
 
-Retorna um token JWT
-
-## 🐳 Docker
-
-```
-docker build -t classmate-auth-service .
-docker run -p 5001:5001 classmate-auth-service
+``` json
+{
+  "email": "exemplo@email.com",
+  "password": "123456"
+}
 ```
 
 ## 📦 Estrutura

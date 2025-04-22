@@ -1,15 +1,13 @@
 name: CI - Auth Service
 
+
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  build-test:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - name: 🔄 Checkout do repositório
         uses: actions/checkout@v3
@@ -33,3 +31,12 @@ jobs:
         with:
           name: coverage-report
           path: coverage
+        
+      - name: 🔍 Rodar ESLint
+        run: npx eslint src/**/*.ts
+
+      - name: 🛠️ Build do projeto
+        run: npm run build
+
+      - name: 🚀 Emular Deploy
+        run: echo "Emulando deploy de produção..."
