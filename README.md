@@ -7,7 +7,6 @@
 
 ## Testes
 
-![CI](https://github.com/supiacenti/classmate-auth-service/actions/workflows/ci.yml/badge.svg)
 Cobertura: ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
 ---
